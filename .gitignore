@@ -1,0 +1,15 @@
+demo
+demo2
+demo2_r
+demo3
+demo3_r
+demo_r
+config.log
+config.status
+enhance
+*.dylib
+*.a
+libtecla.map.opt
+man
+normal_obj
+reentrant_obj
