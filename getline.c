@@ -93,12 +93,15 @@
  * Similarly, under Mac OS X, the return value of the tputs output
  * function is declared as void, whereas it is declared as int on
  * other systems.
+ *    UPDATE: The return value of the tputs callback function has been
+ *            declared as int since at least OS X 10.8 (Mountain Lion)
+ *            in 2012. (DLS 14apr2024)
  */
 #if defined __sun && defined __SVR4 && !defined _XOPEN_CURSES
 typedef int TputsRetType;
 typedef char TputsArgType;              /* int tputs(char c, FILE *fp) */
 #define TPUTS_RETURNS_VALUE 1
-#elif defined(__APPLE__) && defined(__MACH__)
+#elif 0 && defined(__APPLE__) && defined(__MACH__) /* DLS removed (see above) */
 typedef void TputsRetType;
 typedef int TputsArgType;               /* void tputs(int c, FILE *fp) */
 #define TPUTS_RETURNS_VALUE 0
