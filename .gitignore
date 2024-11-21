@@ -13,3 +13,4 @@ libtecla.map.opt
 man
 normal_obj
 reentrant_obj
+autom4te.cache

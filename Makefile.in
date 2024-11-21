@@ -144,12 +144,13 @@ TARGET_LIBS = @TARGET_LIBS@
 # should be assigned the single word: demos. If it isn't assigned
 # anything, the demo programs won't be built.
 #
-DEMOS = demos
+DEMOS = @DEMOS@
 
 #
 # List the programs that are to be made by default.
 #
-PROGRAMS = enhance
+##PROGRAMS = enhance
+PROGRAMS = @PROGRAMS@
 
 #
 # List programs for which reentrant versions are to be built by default.
@@ -216,6 +217,7 @@ install_inc: $(INCDIR)
 	fi
 
 install_man: $(MANDIR) libr_man func_man prog_man misc_man file_man
+	echo "--------------------------------------- at install_man MANDIR=$(MANDIR) MAKE_MAN_PAGES=@MAKE_MAN_PAGES@"
 
 libr_man:
 	if test "@MAKE_MAN_PAGES@"_ = "yes"_; then \
